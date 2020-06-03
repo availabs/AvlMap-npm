@@ -1,3 +1,9 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
 // Copyright (c) 2018 Uber Technologies, Inc.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -19,7 +25,8 @@
 // THE SOFTWARE.
 
 /* eslint-disable no-use-before-define */
-const KeyEvent = {} //KeyEvent || {};
+var KeyEvent = {}; //KeyEvent || {};
+
 /* eslint-enable no-use-before-define */
 
 KeyEvent.DOM_VK_UP = KeyEvent.DOM_VK_UP || 38;
@@ -29,5 +36,5 @@ KeyEvent.DOM_VK_RETURN = KeyEvent.DOM_VK_RETURN || 13;
 KeyEvent.DOM_VK_ENTER = KeyEvent.DOM_VK_ENTER || 14;
 KeyEvent.DOM_VK_ESCAPE = KeyEvent.DOM_VK_ESCAPE || 27;
 KeyEvent.DOM_VK_TAB = KeyEvent.DOM_VK_TAB || 9;
-
-export default KeyEvent;
+var _default = KeyEvent;
+exports["default"] = _default;

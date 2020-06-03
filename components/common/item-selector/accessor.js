@@ -1,3 +1,12 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 // Copyright (c) 2018 Uber Technologies, Inc.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -17,33 +26,37 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-
-const Accessor = {
-  IDENTITY_FN: input => input,
-
-  generateAccessor: field => object => object[field],
-
+var Accessor = {
+  IDENTITY_FN: function IDENTITY_FN(input) {
+    return input;
+  },
+  generateAccessor: function generateAccessor(field) {
+    return function (object) {
+      return object[field];
+    };
+  },
   generateOptionToStringFor: function generateOptionToStringFor(prop) {
     if (typeof prop === 'string') {
       return this.generateAccessor(prop);
     } else if (typeof prop === 'function') {
       return prop;
-    } else if (typeof prop === 'object'){
-      return prop.name
+    } else if (_typeof(prop) === 'object') {
+      return prop.name;
     }
+
     return this.IDENTITY_FN;
   },
-
-  valueForOption: (option, object) => {
+  valueForOption: function valueForOption(option, object) {
     if (typeof option === 'string') {
       return object[option];
     } else if (typeof option === 'function') {
       return option(object);
-    } else if (typeof prop === 'object'){
-      return option.name
+    } else if ((typeof prop === "undefined" ? "undefined" : _typeof(prop)) === 'object') {
+      return option.name;
     }
+
     return object;
   }
 };
-
-export default Accessor;
+var _default = Accessor;
+exports["default"] = _default;

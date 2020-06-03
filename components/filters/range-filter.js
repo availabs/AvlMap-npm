@@ -1,3 +1,16 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _rangeSlider = _interopRequireDefault(require("components/common/range-slider"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
 // Copyright (c) 2018 Uber Technologies, Inc.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -17,23 +30,20 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
+var RangeFilter = function RangeFilter(_ref) {
+  var filter = _ref.filter,
+      setFilter = _ref.setFilter;
+  return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(_rangeSlider["default"], {
+    range: filter.domain,
+    value0: filter.value[0],
+    value1: filter.value[1],
+    step: filter.step,
+    histogram: filter.histogram,
+    isEnlarged: filter.isEnlarged,
+    onChange: setFilter,
+    inputTheme: "secondary"
+  }));
+};
 
-import React from 'react';
-import RangeSlider from 'components/common/range-slider';
-
-const RangeFilter = ({filter, setFilter}) => (
-  <div>
-    <RangeSlider
-      range={filter.domain}
-      value0={filter.value[0]}
-      value1={filter.value[1]}
-      step={filter.step}
-      histogram={filter.histogram}
-      isEnlarged={filter.isEnlarged}
-      onChange={setFilter}
-      inputTheme="secondary"
-    />
-  </div>
-);
-
-export default RangeFilter;
+var _default = RangeFilter;
+exports["default"] = _default;

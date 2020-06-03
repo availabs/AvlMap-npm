@@ -1,3 +1,18 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _itemSelector = _interopRequireDefault(require("../common/item-selector/item-selector"));
+
+var _styledComponents = require("../common/styled-components");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
 // Copyright (c) 2018 Uber Technologies, Inc.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -17,26 +32,31 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
+var MultiSelectFilter = function MultiSelectFilter(_ref) {
+  var filter = _ref.filter,
+      setFilter = _ref.setFilter,
+      _ref$placeHolder = _ref.placeHolder,
+      placeHolder = _ref$placeHolder === void 0 ? "Select a Value" : _ref$placeHolder;
+  return /*#__PURE__*/_react["default"].createElement(_styledComponents.SidePanelSection, null, filter.name ? /*#__PURE__*/_react["default"].createElement(_styledComponents.PanelLabel, {
+    htmlFor: "filter-".concat(filter.id)
+  }, filter.name) : null, /*#__PURE__*/_react["default"].createElement(_itemSelector["default"], {
+    selectedItems: filter.value,
+    placeholder: placeHolder,
+    options: filter.domain,
+    multiSelect: true,
+    searchable: true,
+    displayOption: function displayOption(d) {
+      return d.name ? d.name : filter.domain.reduce(function (a, c) {
+        return c.value === d ? c.name : a;
+      }, d);
+    },
+    getOptionValue: function getOptionValue(d) {
+      return d.value ? d.value : d;
+    },
+    onChange: setFilter,
+    inputTheme: "secondary"
+  }));
+};
 
-import React from 'react';
-import ItemSelector from '../common/item-selector/item-selector';
-import {PanelLabel,SidePanelSection} from '../common/styled-components';
-
-const MultiSelectFilter = ({filter, setFilter, placeHolder="Select a Value"}) => (
-  <SidePanelSection>
-      {filter.name ? <PanelLabel htmlFor={`filter-${filter.id}`}>{filter.name}</PanelLabel> : null}
-      <ItemSelector
-          selectedItems={filter.value}
-          placeholder={placeHolder}
-          options={filter.domain}
-          multiSelect={true}
-          searchable={ true }
-          displayOption={ d => d.name ? d.name : filter.domain.reduce((a, c) => c.value === d ? c.name : a, d) }
-          getOptionValue={d => d.value ? d.value : d}
-          onChange={setFilter}
-          inputTheme="secondary"
-      />
-  </SidePanelSection>
-);
-
-export default MultiSelectFilter;
+var _default = MultiSelectFilter;
+exports["default"] = _default;

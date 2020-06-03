@@ -1,3 +1,16 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _styledComponents = require("../common/styled-components");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
 // Copyright (c) 2018 Uber Technologies, Inc.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -17,22 +30,18 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-
-import React from 'react';
 // import ItemSelector from '../common/item-selector/item-selector';
-import {PanelLabel, SidePanelSection, Input} from '../common/styled-components';
+var SingleSelectFilter = function SingleSelectFilter(_ref) {
+  var filter = _ref.filter,
+      setFilter = _ref.setFilter;
+  return /*#__PURE__*/_react["default"].createElement(_styledComponents.SidePanelSection, null, /*#__PURE__*/_react["default"].createElement(_styledComponents.PanelLabel, null, filter.name), /*#__PURE__*/_react["default"].createElement(_styledComponents.Input, {
+    type: "date",
+    value: filter.value,
+    onChange: function onChange(e) {
+      return setFilter(e.target.value);
+    }
+  }));
+};
 
-const SingleSelectFilter = ({filter, setFilter}) => (
-  <SidePanelSection >
-    <PanelLabel>{filter.name}</PanelLabel>
-    <Input 
-      type='date' 
-      value={filter.value} 
-      onChange={(e) => setFilter(e.target.value)}
-    />
-             
-  </SidePanelSection>
-)
-
-
-export default SingleSelectFilter;
+var _default = SingleSelectFilter;
+exports["default"] = _default;

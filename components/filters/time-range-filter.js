@@ -1,3 +1,16 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _timeRangeSlider = _interopRequireDefault(require("components/common/time-range-slider"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
 // Copyright (c) 2018 Uber Technologies, Inc.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -18,33 +31,28 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import React from 'react';
-import TimeRangeSlider from 'components/common/time-range-slider';
-
 /*
  * TimeRangeFilter -> TimeRangeSlider -> RangeSlider
  */
-const TimeRangeFilter = ({
-  filter,
-  setFilter,
-  isAnyFilterAnimating,
-  toggleAnimation
-}) => (
-  <div>
-    <TimeRangeSlider
-      domain={filter.domain}
-      value={filter.value}
-      plotType={filter.plotType}
-      lineChart={filter.lineChart}
-      step={filter.step}
-      speed={filter.speed}
-      histogram={filter.enlarged ? filter.enlargedHistogram : filter.histogram}
-      onChange={setFilter}
-      toggleAnimation={toggleAnimation}
-      isAnimatable={!isAnyFilterAnimating || filter.isAnimating}
-      isEnlarged={filter.enlarged}
-    />
-  </div>
-);
+var TimeRangeFilter = function TimeRangeFilter(_ref) {
+  var filter = _ref.filter,
+      setFilter = _ref.setFilter,
+      isAnyFilterAnimating = _ref.isAnyFilterAnimating,
+      toggleAnimation = _ref.toggleAnimation;
+  return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(_timeRangeSlider["default"], {
+    domain: filter.domain,
+    value: filter.value,
+    plotType: filter.plotType,
+    lineChart: filter.lineChart,
+    step: filter.step,
+    speed: filter.speed,
+    histogram: filter.enlarged ? filter.enlargedHistogram : filter.histogram,
+    onChange: setFilter,
+    toggleAnimation: toggleAnimation,
+    isAnimatable: !isAnyFilterAnimating || filter.isAnimating,
+    isEnlarged: filter.enlarged
+  }));
+};
 
-export default TimeRangeFilter;
+var _default = TimeRangeFilter;
+exports["default"] = _default;

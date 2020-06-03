@@ -1,113 +1,122 @@
-// Copyright (c) 2018 Uber Technologies, Inc.
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
+"use strict";
 
-import React from 'react';
-import PropTypes from 'prop-types';
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
 
-import styled from 'styled-components';
-import Delete from '../icons/delete';
+var _react = _interopRequireDefault(require("react"));
 
-const propTypes = {
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+var _delete = _interopRequireDefault(require("../icons/delete"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n  ", "\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n  margin-right: 10px;\n  text-overflow: ellipsis;\n  width: 100%;\n  overflow: hidden;\n\n  :hover {\n    overflow: visible;\n  }\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  border-radius: 1px;\n  font-size: auto;\n  color: ", ";\n  line-height: 20px;\n  /*margin: 3px 10px 3px 3px;*/\n  /*padding: 4px 6px;*/\n  padding-left: 6px;\n  display: flex;\n  align-items: center;\n  max-width: calc(100% - 8px);\n  :hover {\n    color: ", ";\n  }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var propTypes = {
   // required properties
-  onClick: PropTypes.func.isRequired,
-  removeItem: PropTypes.func.isRequired,
-
+  onClick: _propTypes["default"].func.isRequired,
+  removeItem: _propTypes["default"].func.isRequired,
   // optional properties
-  selectedItems: PropTypes.arrayOf(PropTypes.any),
-  disabled: PropTypes.bool,
-  displayOption: PropTypes.func,
-  focus: PropTypes.bool,
-  error: PropTypes.bool,
-  placeholder: PropTypes.string
+  selectedItems: _propTypes["default"].arrayOf(_propTypes["default"].any),
+  disabled: _propTypes["default"].bool,
+  displayOption: _propTypes["default"].func,
+  focus: _propTypes["default"].bool,
+  error: _propTypes["default"].bool,
+  placeholder: _propTypes["default"].string
 };
 
-const ChickletButton = styled.div`
-  border-radius: 1px;
-  font-size: auto;
-  color: ${props => props.theme.textColor};
-  line-height: 20px;
-  /*margin: 3px 10px 3px 3px;*/
-  /*padding: 4px 6px;*/
-  padding-left: 6px;
-  display: flex;
-  align-items: center;
-  max-width: calc(100% - 8px);
-  :hover {
-    color: ${props => props.theme.textColorHl};
-  }
-`;
-// font-size: 11px;
+var ChickletButton = _styledComponents["default"].div(_templateObject(), function (props) {
+  return props.theme.textColor;
+}, function (props) {
+  return props.theme.textColorHl;
+}); // font-size: 11px;
 // background: ${props => props.theme.panelActiveBg};
-const ChickletTag = styled.span`
-  margin-right: 10px;
-  text-overflow: ellipsis;
-  width: 100%;
-  overflow: hidden;
 
-  :hover {
-    overflow: visible;
-  }
-`;
 
-const Chicklet = ({disabled, name, remove}) => (
-  <ChickletButton>
-    <ChickletTag>{name}</ChickletTag>
-    <Delete height="10px" onClick={disabled ? null : remove} />
-  </ChickletButton>
-);
+var ChickletTag = _styledComponents["default"].span(_templateObject2());
 
-const ChickletedInputContainer = styled.div`
-  ${props => props.theme.chickletedInput}
-`;
+var Chicklet = function Chicklet(_ref) {
+  var disabled = _ref.disabled,
+      name = _ref.name,
+      remove = _ref.remove;
+  return /*#__PURE__*/_react["default"].createElement(ChickletButton, null, /*#__PURE__*/_react["default"].createElement(ChickletTag, null, name), /*#__PURE__*/_react["default"].createElement(_delete["default"], {
+    height: "10px",
+    onClick: disabled ? null : remove
+  }));
+};
 
-const ChickletedInput = ({
-  focus,
-  disabled,
-  error,
-  onClick,
-  className,
-  selectedItems = [],
-  placeholder = '',
-  removeItem,
-  displayOption = d => d
-}) => (
-  <ChickletedInputContainer
-    className={`${className} chickleted-input`}
-    focus={focus}
-    disabled={disabled}
-    error={error}
-    onClick={onClick}
-  >
-    {selectedItems.length > 0
-      ? selectedItems.map((item, i) => (
-          <Chicklet
-            disabled={disabled}
-            key={`${displayOption(item)}_${i}`}
-            name={displayOption(item)}
-            remove={e => removeItem(item, e)}
-          />
-        ))
-      : placeholder}
-  </ChickletedInputContainer>
-);
+var ChickletedInputContainer = _styledComponents["default"].div(_templateObject3(), function (props) {
+  return props.theme.chickletedInput;
+});
+
+var ChickletedInput = function ChickletedInput(_ref2) {
+  var focus = _ref2.focus,
+      disabled = _ref2.disabled,
+      error = _ref2.error,
+      onClick = _ref2.onClick,
+      className = _ref2.className,
+      _ref2$selectedItems = _ref2.selectedItems,
+      selectedItems = _ref2$selectedItems === void 0 ? [] : _ref2$selectedItems,
+      _ref2$placeholder = _ref2.placeholder,
+      placeholder = _ref2$placeholder === void 0 ? '' : _ref2$placeholder,
+      removeItem = _ref2.removeItem,
+      _ref2$displayOption = _ref2.displayOption,
+      displayOption = _ref2$displayOption === void 0 ? function (d) {
+    return d;
+  } : _ref2$displayOption;
+  return /*#__PURE__*/_react["default"].createElement(ChickletedInputContainer, {
+    className: "".concat(className, " chickleted-input"),
+    focus: focus,
+    disabled: disabled,
+    error: error,
+    onClick: onClick
+  }, selectedItems.length > 0 ? selectedItems.map(function (item, i) {
+    return /*#__PURE__*/_react["default"].createElement(Chicklet, {
+      disabled: disabled,
+      key: "".concat(displayOption(item), "_").concat(i),
+      name: displayOption(item),
+      remove: function remove(e) {
+        return removeItem(item, e);
+      }
+    });
+  }) : placeholder);
+};
 
 ChickletedInput.propTypes = propTypes;
-
-export default ChickletedInput;
+var _default = ChickletedInput;
+exports["default"] = _default;

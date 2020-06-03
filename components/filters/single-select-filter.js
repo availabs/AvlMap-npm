@@ -1,3 +1,18 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _itemSelector = _interopRequireDefault(require("../common/item-selector/item-selector"));
+
+var _styledComponents = require("../common/styled-components");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
 // Copyright (c) 2018 Uber Technologies, Inc.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -17,27 +32,27 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
+var SingleSelectFilter = function SingleSelectFilter(_ref) {
+  var filter = _ref.filter,
+      setFilter = _ref.setFilter;
+  return /*#__PURE__*/_react["default"].createElement(_styledComponents.SidePanelSection, null, /*#__PURE__*/_react["default"].createElement(_styledComponents.PanelLabel, null, filter.name), /*#__PURE__*/_react["default"].createElement(_itemSelector["default"], {
+    selectedItems: filter.value // placeholder={"Select a Value"}
+    ,
+    options: filter.domain,
+    multiSelect: false,
+    searchable: false,
+    displayOption: function displayOption(d) {
+      return d.name ? d.name : filter.domain.reduce(function (a, c) {
+        return c.value === d ? c.name : a;
+      }, d);
+    },
+    getOptionValue: function getOptionValue(d) {
+      return d.value ? d.value : d;
+    },
+    onChange: setFilter,
+    inputTheme: "secondary"
+  }));
+};
 
-import React from 'react';
-import ItemSelector from '../common/item-selector/item-selector';
-import {PanelLabel, SidePanelSection} from '../common/styled-components';
-
-const SingleSelectFilter = ({filter, setFilter}) => (
-  <SidePanelSection >
-    <PanelLabel>{filter.name}</PanelLabel>
-    <ItemSelector
-      selectedItems={filter.value}
-      // placeholder={"Select a Value"}
-      options={filter.domain}
-      multiSelect={false}
-      searchable={false}
-      displayOption={ d => d.name ? d.name : filter.domain.reduce((a, c) => c.value === d ? c.name : a, d) }
-      getOptionValue={d => d.value ? d.value : d}
-      onChange={setFilter}
-      inputTheme="secondary"
-    />
-  </SidePanelSection>
-)
-
-
-export default SingleSelectFilter;
+var _default = SingleSelectFilter;
+exports["default"] = _default;

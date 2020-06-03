@@ -3,19 +3,17 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
-
-var _propTypes = _interopRequireDefault(require("prop-types"));
+exports.TabSelector = exports.Tab = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _base = _interopRequireDefault(require("./base"));
+var _lodash = _interopRequireDefault(require("lodash.get"));
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -39,39 +37,109 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var Files = /*#__PURE__*/function (_React$Component) {
-  _inherits(Files, _React$Component);
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  padding: 5px 15px 0px 15px;\n  border-bottom: 2px solid ", ";\n  cursor: pointer;\n  transition: color 0.15s, border-color 0.15s, background-color 0.15s;\n  font-size: 1rem;\n  border-top-right-radius: 4px;\n  border-top-left-radius: 4px;\n  background-color: ", ";\n  :hover {\n    color: ", ";\n    background-color: ", ";\n  }\n  margin-right: 5px;\n  :last-child {\n    margin-right: 0px;\n  }\n"]);
 
-  var _super = _createSuper(Files);
+  _templateObject = function _templateObject() {
+    return data;
+  };
 
-  function Files() {
-    _classCallCheck(this, Files);
+  return data;
+}
 
-    return _super.apply(this, arguments);
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var StyledTab = _styledComponents["default"].div(_templateObject(), function (props) {
+  return props.isActive ? "currentColor" : "transparent";
+}, function (props) {
+  return props.isActive ? props.theme.inputBgdActive : props.theme.inputBgd;
+}, function (props) {
+  return props.theme.textColorHl;
+}, function (props) {
+  return props.theme.inputBgdHover;
+});
+
+var Tab = function Tab(_ref) {
+  var children = _ref.children;
+  return children;
+};
+
+exports.Tab = Tab;
+
+var TabSelector = /*#__PURE__*/function (_React$Component) {
+  _inherits(TabSelector, _React$Component);
+
+  var _super = _createSuper(TabSelector);
+
+  function TabSelector() {
+    var _this;
+
+    _classCallCheck(this, TabSelector);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _super.call.apply(_super, [this].concat(args));
+
+    _defineProperty(_assertThisInitialized(_this), "state", {
+      currentTab: _this.props.currentTab
+    });
+
+    return _this;
   }
 
-  _createClass(Files, [{
+  _createClass(TabSelector, [{
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(oldProps) {
+      if (oldProps.currentTab !== this.props.currentTab && this.state.currentTab !== this.props.currentTab) {
+        this.setState({
+          currentTab: this.props.currentTab
+        });
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/_react["default"].createElement(_base["default"], _extends({
-        viewBox: "0 0 64 64"
-      }, this.props), /*#__PURE__*/_react["default"].createElement("path", {
-        d: "M48.015 58h-32a8 8 0 0 1-8-8V26h48v24a8 8 0 0 1-8 8zm-2-44h-28a6 6 0 0 0-6 6v2h40v-2a6 6 0 0 0-6-6zm-2 26v-6h-4v4h-16v-4h-4v6a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2zm-4-34h-16a4 4 0 0 0-4 4h24a4 4 0 0 0-4-4z"
-      }));
+      var _this2 = this;
+
+      var children = _react["default"].Children.toArray(this.props.children);
+
+      return /*#__PURE__*/_react["default"].createElement("div", {
+        style: {
+          width: "100%"
+        }
+      }, /*#__PURE__*/_react["default"].createElement("div", {
+        style: {
+          display: "flex"
+        }
+      }, children.map(function (c, i) {
+        return /*#__PURE__*/_react["default"].createElement(StyledTab, {
+          key: i,
+          style: {
+            minWidth: "".concat(_this2.props.minTabWidth, "px")
+          },
+          onClick: function onClick(e) {
+            return _this2.setState({
+              currentTab: i
+            });
+          },
+          isActive: i === _this2.state.currentTab
+        }, c.props.name || "Tab ".concat(i));
+      })), /*#__PURE__*/_react["default"].createElement("div", {
+        style: {
+          marginTop: "10px"
+        }
+      }, children[this.state.currentTab]));
     }
   }]);
 
-  return Files;
+  return TabSelector;
 }(_react["default"].Component);
 
-exports["default"] = Files;
+exports.TabSelector = TabSelector;
 
-_defineProperty(Files, "propTypes", {
-  /** Set the height of the icon, ex. '16px' */
-  height: _propTypes["default"].string
-});
-
-_defineProperty(Files, "defaultProps", {
-  height: '16px',
-  predefinedClassName: 'data-ex-icons-minus'
+_defineProperty(TabSelector, "defaultProps", {
+  currentTab: 0,
+  minTabWidth: 150
 });

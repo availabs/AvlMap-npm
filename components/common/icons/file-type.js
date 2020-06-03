@@ -1,57 +1,62 @@
-// Copyright (c) 2018 Uber Technologies, Inc.
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
+"use strict";
 
-import React from 'react';
-import styled from 'styled-components';
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
 
-import {File} from './index';
+var _react = _interopRequireDefault(require("react"));
 
-const FileNameTag = styled.div`
-  background-color: currentColor;
-  border-radius: 1px;
-  display: inline-block;
-  padding: 0 4px;
-  position: absolute;
-  top: 45%;
-  left: 10%;
+var _styledComponents = _interopRequireDefault(require("styled-components"));
 
-  .text {
-    color: white;
-    font-size: ${props => props.fontSize};
-  }
-`;
+var _index = require("./index");
 
-const FileTypeIconWrapper = styled.div`
-  display: inline-block;
-  position: relative;
-  color: currentColor;
-  height: ${props => props.height};
-`;
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-const FileTypeIcon = ({ext, height, fontSize}) => (
-  <FileTypeIconWrapper height={height}>
-    <File height={height} />
-    <FileNameTag fontSize={fontSize}>
-      <div className="text">{ext}</div>
-    </FileNameTag>
-  </FileTypeIconWrapper>
-);
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n  display: inline-block;\n  position: relative;\n  color: currentColor;\n  height: ", ";\n"]);
 
-export default FileTypeIcon;
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  background-color: currentColor;\n  border-radius: 1px;\n  display: inline-block;\n  padding: 0 4px;\n  position: absolute;\n  top: 45%;\n  left: 10%;\n\n  .text {\n    color: white;\n    font-size: ", ";\n  }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var FileNameTag = _styledComponents["default"].div(_templateObject(), function (props) {
+  return props.fontSize;
+});
+
+var FileTypeIconWrapper = _styledComponents["default"].div(_templateObject2(), function (props) {
+  return props.height;
+});
+
+var FileTypeIcon = function FileTypeIcon(_ref) {
+  var ext = _ref.ext,
+      height = _ref.height,
+      fontSize = _ref.fontSize;
+  return /*#__PURE__*/_react["default"].createElement(FileTypeIconWrapper, {
+    height: height
+  }, /*#__PURE__*/_react["default"].createElement(_index.File, {
+    height: height
+  }), /*#__PURE__*/_react["default"].createElement(FileNameTag, {
+    fontSize: fontSize
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    className: "text"
+  }, ext)));
+};
+
+var _default = FileTypeIcon;
+exports["default"] = _default;

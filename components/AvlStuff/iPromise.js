@@ -3,19 +3,13 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
-
-var _propTypes = _interopRequireDefault(require("prop-types"));
+exports.iPromise = void 0;
 
 var _react = _interopRequireDefault(require("react"));
-
-var _base = _interopRequireDefault(require("./base"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -39,39 +33,71 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var Files = /*#__PURE__*/function (_React$Component) {
-  _inherits(Files, _React$Component);
+var UNIQUE_ID = 0;
 
-  var _super = _createSuper(Files);
+var PromiseComponent = /*#__PURE__*/function (_React$Component) {
+  _inherits(PromiseComponent, _React$Component);
 
-  function Files() {
-    _classCallCheck(this, Files);
+  var _super = _createSuper(PromiseComponent);
 
-    return _super.apply(this, arguments);
+  function PromiseComponent() {
+    var _this;
+
+    _classCallCheck(this, PromiseComponent);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _super.call.apply(_super, [this].concat(args));
+
+    _defineProperty(_assertThisInitialized(_this), "state", {
+      data: "Loading..."
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "MOUNTED", false);
+
+    return _this;
   }
 
-  _createClass(Files, [{
+  _createClass(PromiseComponent, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      this.MOUNTED = true;
+      Promise.resolve(this.props.promise).then(function (data) {
+        return _this2.MOUNTED && _this2.setState({
+          data: data
+        });
+      });
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.MOUNTED = false;
+    }
+  }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/_react["default"].createElement(_base["default"], _extends({
-        viewBox: "0 0 64 64"
-      }, this.props), /*#__PURE__*/_react["default"].createElement("path", {
-        d: "M48.015 58h-32a8 8 0 0 1-8-8V26h48v24a8 8 0 0 1-8 8zm-2-44h-28a6 6 0 0 0-6 6v2h40v-2a6 6 0 0 0-6-6zm-2 26v-6h-4v4h-16v-4h-4v6a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2zm-4-34h-16a4 4 0 0 0-4 4h24a4 4 0 0 0-4-4z"
-      }));
+      return /*#__PURE__*/_react["default"].createElement("div", null, this.state.data);
     }
   }]);
 
-  return Files;
+  return PromiseComponent;
 }(_react["default"].Component);
 
-exports["default"] = Files;
-
-_defineProperty(Files, "propTypes", {
-  /** Set the height of the icon, ex. '16px' */
-  height: _propTypes["default"].string
+_defineProperty(PromiseComponent, "defaultProps", {
+  promise: Promise.resolve("No Data!!!")
 });
 
-_defineProperty(Files, "defaultProps", {
-  height: '16px',
-  predefinedClassName: 'data-ex-icons-minus'
-});
+var iPromise = function iPromise(promise) {
+  var id = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ++UNIQUE_ID;
+  return /*#__PURE__*/_react["default"].createElement(PromiseComponent, {
+    key: id,
+    promise: promise,
+    id: id
+  });
+};
+
+exports.iPromise = iPromise;

@@ -1,0 +1,41 @@
+{
+  "name": "avlmap-npm",
+  "version": "1.0.0",
+  "description": "Avail Map by Avail Labs",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "peerDependencies": {
+    "react": "^16.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/availabs/AvlMap-npm.git"
+  },
+  "keywords": [
+    "Avail",
+    "Labs",
+    "Avail",
+    "Map"
+  ],
+  "author": "Avail Labs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/availabs/AvlMap-npm/issues"
+  },
+  "homepage": "https://github.com/availabs/AvlMap-npm#readme",
+  "dependencies": {
+    "react": "^16.13.1",
+    "webpack": "^4.43.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "webpack-cli": "^3.3.11"
+  }
+}

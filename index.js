@@ -17,23 +17,23 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _d3Format = require("d3-format");
 
-var _sidebar = _interopRequireDefault(require("./components/sidebar"));
+var _sidebar = _interopRequireDefault(require("./components/sidebar/index.js"));
 
-var _Infobox = _interopRequireDefault(require("./components/infobox/Infobox"));
+var _Infobox = _interopRequireDefault(require("./components/infobox/Infobox.js"));
 
 var _MapPopover = _interopRequireDefault(require("./components/popover/MapPopover"));
 
 var _MapModal = _interopRequireDefault(require("./components/modal/MapModal"));
 
-var _MapActions = _interopRequireDefault(require("./components/MapActions"));
+var _MapActions = _interopRequireDefault(require("./components/MapActions/index"));
 
-var _MapMessages = _interopRequireDefault(require("./components/MapMessages"));
+var _MapMessages = _interopRequireDefault(require("./components/MapMessages/index"));
 
-var _loadingPage = require("./components/loading/loadingPage");
+var _loadingPage = require("./components/loading/loadingPage.js");
 
-require("./avlmap.css");
+require("./components/css/avlmap.css");
 
-var _LayerMessageSystem = require("./LayerMessageSystem");
+var _LayerMessageSystem = require("./components/layerMessageSystem/LayerMessageSystem");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 

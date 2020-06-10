@@ -2,12 +2,16 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-    entry: path.resolve(__dirname, 'index')  ,
+    entry: {
+        'AvlMap' : path.resolve(__dirname, 'AvlMap'),
+    },
+    mode:'development',
     plugins: [new MiniCssExtractPlugin()],
     output: {
         path: path.resolve(__dirname, './dist/'),
-        filename: 'index.js'
+        filename: '[name].js'
     },
+    target: "node",
     module: {
         rules: [
             {
@@ -27,7 +31,10 @@ module.exports = {
         ]
     },
     externals: {
-        'react': 'commonjs react'
+        'react': 'commonjs react',
+        'fs': "require('fs')",
+        'path': "require('path')",
+        'resolve': "require('resolve')"
     },
     resolve: {
         extensions: ['*', '.js', '.jsx']

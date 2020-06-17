@@ -64,88 +64,78 @@ require("core-js/modules/es6.object.freeze");
 
 require("core-js/modules/es6.object.define-property");
 
-require("core-js/modules/es6.set");
-
-require("core-js/modules/es6.regexp.constructor");
-
-require("core-js/modules/es6.promise");
-
-require("core-js/modules/es6.reflect.construct");
-
-require("core-js/modules/es6.reflect.get");
-
-require("core-js/modules/es6.string.iterator");
-
-require("core-js/modules/es6.array.from");
-
-require("core-js/modules/es6.function.name");
-
-require("core-js/modules/es6.regexp.to-string");
-
-require("core-js/modules/es7.object.get-own-property-descriptors");
-
-require("core-js/modules/es6.array.iterator");
-
-require("core-js/modules/es6.object.to-string");
-
-require("core-js/modules/es6.object.keys");
-
-require("core-js/modules/web.dom.iterable");
-
-require("core-js/modules/es6.object.assign");
-
-require("core-js/modules/es7.symbol.async-iterator");
-
-require("core-js/modules/es6.symbol");
-
-require("core-js/modules/es6.object.freeze");
-
-require("core-js/modules/es6.set");
-
-require("core-js/modules/es6.regexp.constructor");
-
-require("core-js/modules/es6.promise");
-
-require("core-js/modules/es6.reflect.construct");
-
-require("core-js/modules/es6.reflect.get");
-
-require("core-js/modules/es6.string.iterator");
-
-require("core-js/modules/es6.array.from");
-
-require("core-js/modules/es6.function.name");
-
-require("core-js/modules/es6.regexp.to-string");
-
-require("core-js/modules/es7.object.get-own-property-descriptors");
-
-require("core-js/modules/es6.array.iterator");
-
-require("core-js/modules/es6.object.to-string");
-
-require("core-js/modules/es6.object.keys");
-
-require("core-js/modules/web.dom.iterable");
-
-require("core-js/modules/es6.object.assign");
-
-require("core-js/modules/es7.symbol.async-iterator");
-
-require("core-js/modules/es6.symbol");
-
-require("core-js/modules/es6.object.freeze");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = exports.DEFAULT_STYLES = void 0;
+exports.default = exports.DEFAULT_STYLES = void 0;
+
+require("core-js/modules/es6.object.freeze");
+
+require("core-js/modules/es6.object.assign");
+
+require("core-js/modules/es6.array.index-of");
+
+require("core-js/modules/es6.object.define-properties");
+
+require("core-js/modules/es7.object.get-own-property-descriptors");
+
+require("core-js/modules/es6.object.keys");
+
+require("core-js/modules/es6.array.from");
+
+require("core-js/modules/es7.symbol.async-iterator");
+
+require("core-js/modules/es6.symbol");
+
+require("core-js/modules/es6.array.is-array");
+
+require("core-js/modules/es6.reflect.get");
+
+require("core-js/modules/es6.object.define-property");
+
+require("core-js/modules/es6.object.create");
+
+require("core-js/modules/es6.reflect.construct");
+
+require("core-js/modules/es6.object.set-prototype-of");
+
+require("core-js/modules/es6.function.bind");
+
+require("core-js/modules/es6.array.sort");
+
+require("core-js/modules/web.dom.iterable");
+
+require("core-js/modules/es6.array.iterator");
+
+require("core-js/modules/es6.string.iterator");
+
+require("core-js/modules/es6.set");
+
+require("core-js/modules/es6.date.now");
+
+require("core-js/modules/es6.array.filter");
+
+require("core-js/modules/es6.regexp.constructor");
+
+require("core-js/modules/es6.promise");
+
+require("core-js/modules/es6.array.for-each");
+
+require("core-js/modules/es6.function.name");
+
+require("core-js/modules/es6.array.reduce");
+
+require("core-js/modules/es6.regexp.to-string");
+
+require("core-js/modules/es6.date.to-string");
+
+require("core-js/modules/es6.object.to-string");
+
+require("core-js/modules/es6.array.map");
 
 var os = require('os');
 
 var path = require('path');
-
-var resolve = require('path').resolve();
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -159,34 +149,28 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _d3Format = require("d3-format");
 
-var _sidebar = path.resolve('./components/sidebar/index.js');
+var _sidebar = path.resolve("./components/sidebar");
 
-var _Infobox = path.resolve('./components/infobox/Infobox.js');
+var _Infobox = path.resolve("./components/infobox/Infobox");
 
-var _MapPopover = path.resolve('./components/popover/MapPopover');
+var _MapPopover = path.resolve("./components/popover/MapPopover");
 
-var _MapModal = path.resolve('./components/modal/MapModal');
+var _MapModal = path.resolve("./components/modal/MapModal");
 
-var _MapActions = path.resolve('./components/MapActions/index.js');
+var _MapActions = path.resolve("./components/MapActions");
 
-var _MapMessages = path.resolve('./components/MapMessages/index.js');
+var _MapMessages = path.resolve("./components/MapMessages");
 
-var _loadingPage = path.resolve('./components/loading/loadingPage.js');
+var _LoadingPage = path.resolve("./components/loading/LoadingPage");
 
-path.resolve('./components/css/avlmap.css');
+path.resolve("./components/css/avlmap.css");
 
-var _LayerMessageSystem = path.resolve('./components/layerMessageSystem/LayerMessageSystem');
-
-os.platform();
+var _LayerMessageSystem = path.resolve("./components/layerMessageSystem/LayerMessageSystem");
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : {
-    "default": obj
+    default: obj
   };
-}
-
-function _toArray(arr) {
-  return _arrayWithHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableRest();
 }
 
 function _templateObject() {
@@ -209,6 +193,10 @@ function _taggedTemplateLiteral(strings, raw) {
       value: Object.freeze(raw)
     }
   }));
+}
+
+function _toArray(arr) {
+  return _arrayWithHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableRest();
 }
 
 function _typeof(obj) {
@@ -352,6 +340,21 @@ function _objectSpread(target) {
   }
 
   return target;
+}
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
 }
 
 function _toConsumableArray(arr) {
@@ -520,21 +523,6 @@ function _getPrototypeOf(o) {
   return _getPrototypeOf(o);
 }
 
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-}
-
 var UNIQUE_ID = 0;
 
 var getUniqueId = function getUniqueId() {
@@ -551,7 +539,7 @@ var getUniqueId = function getUniqueId() {
 
 
 var getStaticImageUrl = function getStaticImageUrl(style) {
-  return "https://api.mapbox.com/styles/v1/am3081/".concat(style, "/static/") + "".concat(-74.2179, ",", 43.2994, ",1.5/60x40?") + "attribution=false&logo=false&access_token=".concat(_mapboxGl["default"].accessToken);
+  return "https://api.mapbox.com/styles/v1/am3081/".concat(style, "/static/") + "".concat(-74.2179, ",", 43.2994, ",1.5/60x40?") + "attribution=false&logo=false&access_token=".concat(_mapboxGl.default.accessToken);
 };
 
 var DEFAULT_STYLES = [{
@@ -590,40 +578,39 @@ var AvlMap = /*#__PURE__*/function (_React$Component) {
   }]);
 
   function AvlMap(props) {
-    var _this15 = this;
-
     var _this;
 
     _classCallCheck(this, AvlMap);
 
-    _this = _super.call(this, props);
+    if (props && Object.keys(props).length > 0) {
+      _this = _super.call(this, props);
+      _this.sta = void 0;
+      _this.state = {
+        id: props.id || getUniqueId('avl-map'),
+        map: null,
+        dynamicLayers: [],
+        activeLayers: [],
+        sources: {},
+        popover: {
+          pos: [0, 0],
+          pinned: false,
+          data: [],
+          layer: null
+        },
+        dragging: null,
+        dragover: null,
+        width: 0,
+        height: 0,
+        messages: [],
+        isOpen: true,
+        transitioning: false,
+        style: [].concat(DEFAULT_STYLES)
+      };
+      _this.MOUNTED = false;
+      _mapboxGl.default.accessToken = props.MAPBOX_TOKEN;
+      _this.container = /*#__PURE__*/_react.default.createRef();
+    }
 
-    _defineProperty(_assertThisInitialized(_this), "sta", void 0);
-
-    _this.state = {
-      id: _this.props.id || getUniqueId('avl-map'),
-      map: null,
-      dynamicLayers: [],
-      activeLayers: [],
-      sources: {},
-      popover: {
-        pos: [0, 0],
-        pinned: false,
-        data: [],
-        layer: null
-      },
-      dragging: null,
-      dragover: null,
-      width: 0,
-      height: 0,
-      messages: [],
-      isOpen: true,
-      transitioning: false,
-      styles: [].concat(DEFAULT_STYLES)
-    };
-    _this.MOUNTED = false;
-    _mapboxGl["default"].accessToken = props.MAPBOX_TOKEN;
-    _this.container = /*#__PURE__*/_react["default"].createRef();
     return _this;
   }
 
@@ -661,10 +648,10 @@ var AvlMap = /*#__PURE__*/function (_React$Component) {
           zoom = _this$props.zoom,
           mapControl = _this$props.mapControl,
           preserveDrawingBuffer = _this$props.preserveDrawingBuffer,
-          style = _this$props.styles;
+          style = _this$props.style;
       var id = this.state.id;
       var regex = /^mapbox:\/\/styles\//;
-      var map = new _mapboxGl["default"].Map({
+      var map = new _mapboxGl.default.Map({
         container: id,
         style: regex.test(style) ? style : this.state.style.style,
         center: center,
@@ -675,7 +662,7 @@ var AvlMap = /*#__PURE__*/function (_React$Component) {
       });
 
       if (mapControl) {
-        map.addControl(new _mapboxGl["default"].NavigationControl(), mapControl);
+        map.addControl(new _mapboxGl.default.NavigationControl(), mapControl);
       }
 
       if (!this.props.boxZoom) {
@@ -711,7 +698,7 @@ var AvlMap = /*#__PURE__*/function (_React$Component) {
             layer._onAdd(map);
 
             ++layer.loading;
-            var layerProps = (0, _lodash["default"])(_this2.props.layerProps, layer.name, {});
+            var layerProps = (0, _lodash.default)(_this2.props.layerProps, layer.name, {});
             Promise.resolve(layer.onAdd(map, layerProps)).then(function () {
               return --layer.loading;
             }).then(function () {
@@ -754,13 +741,13 @@ var AvlMap = /*#__PURE__*/function (_React$Component) {
       this.state.activeLayers.forEach(function (layerName) {
         var layer = _this3.getLayer(layerName);
 
-        var layerProps = (0, _lodash["default"])(_this3.props, ["layerProps", layerName], null);
+        var layerProps = (0, _lodash.default)(_this3.props, ["layerProps", layerName], null);
 
         if (layerProps) {
           layer.receiveProps(oldProps.layerProps[layerName], layerProps);
         }
 
-        if (!(0, _deepEqual["default"])(oldProps.layerProps[layerName], layerProps)) {
+        if (!(0, _deepEqual.default)(oldProps.layerProps[layerName], layerProps)) {
           layer.onPropsChange(oldProps.layerProps[layerName], layerProps);
         }
       });
@@ -808,7 +795,7 @@ var AvlMap = /*#__PURE__*/function (_React$Component) {
 
           newLayer._onAdd(_this4.state.map);
 
-          var layerProps = (0, _lodash["default"])(_this4.props.layerProps, newLayer.name, {});
+          var layerProps = (0, _lodash.default)(_this4.props.layerProps, newLayer.name, {});
           Promise.resolve(newLayer.onAdd(_this4.state.map, layerProps)).then(function () {
             return --newLayer.loading;
           }).then(function () {
@@ -1001,7 +988,7 @@ var AvlMap = /*#__PURE__*/function (_React$Component) {
 
         layer._onAdd(this.state.map);
 
-        var layerProps = (0, _lodash["default"])(this.props.layerProps, layerName, {});
+        var layerProps = (0, _lodash.default)(this.props.layerProps, layerName, {});
         Promise.resolve(layer.onAdd(this.state.map, layerProps)).then(function () {
           return --layer.loading;
         }).then(function () {
@@ -1050,7 +1037,7 @@ var AvlMap = /*#__PURE__*/function (_React$Component) {
           }
         });
         layer.sources.forEach(function (source) {
-          if ((0, _lodash["default"])(sources, [source.id, "length"], "not-added") === 0) {
+          if ((0, _lodash.default)(sources, [source.id, "length"], "not-added") === 0) {
             _this7.state.map.removeSource(source.id);
 
             delete sources[source.id];
@@ -1378,13 +1365,13 @@ var AvlMap = /*#__PURE__*/function (_React$Component) {
           url: getStaticImageUrl(s.style.slice(23))
         });
       });
-      return /*#__PURE__*/_react["default"].createElement("div", {
+      return /*#__PURE__*/_react.default.createElement("div", {
         id: this.state.id,
         style: {
           height: this.props.height
         },
         ref: this.container
-      }, !this.props.sidebar ? null : /*#__PURE__*/_react["default"].createElement(_sidebar["default"], {
+      }, !this.props.sidebar ? null : /*#__PURE__*/_react.default.createElement(_sidebar.default, {
         isOpen: this.state.isOpen,
         transitioning: this.state.transitioning,
         onOpenOrClose: this.onOpenOrClose.bind(this),
@@ -1409,29 +1396,29 @@ var AvlMap = /*#__PURE__*/function (_React$Component) {
         style: this.state.style,
         setMapStyle: this.setMapStyle.bind(this),
         map: this.state.map
-      }), /*#__PURE__*/_react["default"].createElement(_Infobox["default"], {
+      }), /*#__PURE__*/_react.default.createElement(_Infobox.default, {
         layers: allLayers,
         activeLayers: this.state.activeLayers
-      }), /*#__PURE__*/_react["default"].createElement(_MapPopover["default"], _extends({}, this.state.popover, {
+      }), /*#__PURE__*/_react.default.createElement(_MapPopover.default, _extends({}, this.state.popover, {
         updatePopover: this.updatePopover.bind(this),
         mapSize: {
           width: this.state.width,
           height: this.state.height
         }
-      })), /*#__PURE__*/_react["default"].createElement(_MapModal["default"], {
+      })), /*#__PURE__*/_react.default.createElement(_MapModal.default, {
         layers: allLayers,
         activeLayers: this.state.activeLayers,
         toggleModal: this.toggleModal.bind(this)
-      }), !this.props.mapactions ? null : /*#__PURE__*/_react["default"].createElement(_MapActions["default"], {
+      }), !this.props.mapactions ? null : /*#__PURE__*/_react.default.createElement(_MapActions.default, {
         layers: allLayers,
         activeLayers: this.state.activeLayers,
         sidebar: this.props.sidebar,
         isOpen: this.state.isOpen && !this.state.transitioning || !this.state.isOpen && this.state.transitioning,
         actionMap: actionMap
-      }), /*#__PURE__*/_react["default"].createElement(_MapMessages["default"], {
+      }), /*#__PURE__*/_react.default.createElement(_MapMessages.default, {
         messages: this.state.messages,
         dismiss: this.dismissMessage.bind(this)
-      }), /*#__PURE__*/_react["default"].createElement(LoadingLayers, {
+      }), /*#__PURE__*/_react.default.createElement(LoadingLayers, {
         layers: allLayers,
         sidebar: this.props.sidebar,
         isOpen: this.state.isOpen && !this.state.transitioning || !this.state.isOpen && this.state.transitioning
@@ -1440,9 +1427,10 @@ var AvlMap = /*#__PURE__*/function (_React$Component) {
   }]);
 
   return AvlMap;
-}(_react["default"].Component);
+}(_react.default.Component);
 
-_defineProperty(AvlMap, "defaultProps", {
+exports.default = AvlMap;
+AvlMap.defaultProps = {
   id: null,
   height: "100%",
   styles: [].concat(DEFAULT_STYLES),
@@ -1462,23 +1450,22 @@ _defineProperty(AvlMap, "defaultProps", {
   sidebarPages: ["layers", "basemaps"],
   layerProps: {},
   preserveDrawingBuffer: false,
-  MAPBOX_TOKEN: '',
-});
+  MAPBOX_TOKEN: ''
+};
+AvlMap.ActiveMaps = {};
 
-_defineProperty(AvlMap, "ActiveMaps", {});
-
-_defineProperty(AvlMap, "addActiveMap", function (id, component, map) {
+AvlMap.addActiveMap = function (id, component, map) {
   AvlMap.ActiveMaps[id] = {
     component: component,
     map: map
   };
-});
+};
 
-_defineProperty(AvlMap, "removeActiveMap", function (id) {
+AvlMap.removeActiveMap = function (id) {
   delete AvlMap.ActiveMaps[id];
-});
+};
 
-_defineProperty(AvlMap, "updateMap", function (_ref5) {
+AvlMap.updateMap = function (_ref5) {
   var _ref6 = _toArray(_ref5),
       id = _ref6[0],
       action = _ref6[1],
@@ -1490,9 +1477,9 @@ _defineProperty(AvlMap, "updateMap", function (_ref5) {
     var component = AvlMap.ActiveMaps[id].component;
     component && component[action] && (_component$action = component[action]).call.apply(_component$action, [component].concat(_toConsumableArray(args)));
   }
-});
+};
 
-_defineProperty(AvlMap, "doAction", function (_ref7) {
+AvlMap.doAction = function (_ref7) {
   var _ref8 = _toArray(_ref7),
       id = _ref8[0],
       action = _ref8[1],
@@ -1514,9 +1501,9 @@ _defineProperty(AvlMap, "doAction", function (_ref7) {
       return result;
     }
   }
-});
+};
 
-var LoadingContainer = _styledComponents["default"].div(_templateObject(), function (props) {
+var LoadingContainer = _styledComponents.default.div(_templateObject(), function (props) {
   return props.sidebar && props.isOpen ? 340 : props.sidebar && !props.isOpen ? 40 : 20;
 }, function (props) {
   return props.theme.textColorHl;
@@ -1543,13 +1530,10 @@ var LoadingIndicator = /*#__PURE__*/function (_React$Component2) {
     }
 
     _this14 = _super2.call.apply(_super2, [this].concat(args));
-
-    _defineProperty(_assertThisInitialized(_this14), "state", {
+    _this14.state = {
       progress: null
-    });
-
-    _defineProperty(_assertThisInitialized(_this14), "format", (0, _d3Format.format)(".0%"));
-
+    };
+    _this14.format = (0, _d3Format.format)(".0%");
     return _this14;
   }
 
@@ -1569,21 +1553,21 @@ var LoadingIndicator = /*#__PURE__*/function (_React$Component2) {
       var layer = this.props.layer,
           height = 40,
           padding = 10;
-      return /*#__PURE__*/_react["default"].createElement("div", {
+      return /*#__PURE__*/_react.default.createElement("div", {
         key: layer.name,
         style: {
           height: "".concat(height + 20, "px"),
           padding: "".concat(padding, "px"),
           display: "flex"
         }
-      }, /*#__PURE__*/_react["default"].createElement("div", {
+      }, /*#__PURE__*/_react.default.createElement("div", {
         style: {
           height: "".concat(height, "px"),
           lineHeight: "".concat(height, "px"),
           textAlign: "left",
           width: "65%"
         }
-      }, layer.name), /*#__PURE__*/_react["default"].createElement("div", {
+      }, layer.name), /*#__PURE__*/_react.default.createElement("div", {
         style: {
           paddingLeft: "".concat(padding, "px"),
           height: "".concat(height, "px"),
@@ -1591,14 +1575,14 @@ var LoadingIndicator = /*#__PURE__*/function (_React$Component2) {
           textAlign: "left",
           width: "calc(35% - ".concat(height, "px)")
         }
-      }, this.state.progress === null ? null : "".concat(this.format(this.state.progress))), /*#__PURE__*/_react["default"].createElement(_loadingPage.ScalableLoading, {
+      }, this.state.progress === null ? null : "".concat(this.format(this.state.progress))), /*#__PURE__*/_react.default.createElement(_LoadingPage.ScalableLoading, {
         scale: height * 0.01
       }));
     }
   }]);
 
   return LoadingIndicator;
-}(_react["default"].Component);
+}(_react.default.Component);
 
 var LoadingLayers = /*#__PURE__*/function (_React$Component3) {
   _inherits(LoadingLayers, _React$Component3);
@@ -1625,13 +1609,13 @@ var LoadingLayers = /*#__PURE__*/function (_React$Component3) {
       }, []),
           height = 40,
           padding = 10;
-      return /*#__PURE__*/_react["default"].createElement(LoadingContainer, {
+      return /*#__PURE__*/_react.default.createElement(LoadingContainer, {
         sidebar: sidebar,
         isOpen: isOpen,
         height: height,
         padding: padding
       }, loadingLayers.map(function (l, i) {
-        return /*#__PURE__*/_react["default"].createElement(LoadingIndicator, {
+        return /*#__PURE__*/_react.default.createElement(LoadingIndicator, {
           key: l.name,
           layer: l
         });
@@ -1640,7 +1624,4 @@ var LoadingLayers = /*#__PURE__*/function (_React$Component3) {
   }]);
 
   return LoadingLayers;
-}(_react["default"].Component);
-
-var _default = AvlMap;
-exports["default"] = _default;
+}(_react.default.Component);

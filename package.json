@@ -1,6 +1,6 @@
 {
   "name": "avlmap-npm",
-  "version": "1.0.69",
+  "version": "1.0.81",
   "description": "Avail Map by Avail Labs",
   "main": "AvlMap.js",
   "browserslist": {
